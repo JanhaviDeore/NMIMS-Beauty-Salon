@@ -1,0 +1,47 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="NMIMSBeautySalon"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NMIMSBeautySalon"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity2"
+            android:exported="true" />
+
+        <!-- Declare other activities -->
+        <activity android:name=".signup" android:exported="true" />
+        <activity android:name=".hair" android:exported="true" />
+        <activity android:name=".face" android:exported="true" />
+        <activity android:name=".waxing" android:exported="true" />
+        <activity android:name=".makeup" android:exported="true" />
+        <activity android:name=".toDo" android:exported="true" />
+        <activity android:name=".payment" android:exported="true" />
+        <activity android:name=".feedback" android:exported="true" />
+        <activity android:name=".thankyou" android:exported="true" />
+        <activity android:name=".list_item_to_do" android:exported="true"/>
+        <activity android:name=".edit_profile" android:exported="true"/>
+        <activity android:name=".header" android:exported="true"/>
+        <activity android:name=".HelperClass" android:exported="true"/>
+        <activity android:name=".ToDoAdapter" android:exported="true"/>
+
+
+    </application>
+
+</manifest>

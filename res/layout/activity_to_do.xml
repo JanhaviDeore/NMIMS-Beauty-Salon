@@ -1,0 +1,303 @@
+An image is a two-dimensional function that represents a measure of some characteristic such as brightness or 
+colour of a viewed scene. An image is a projection of a 3D scene into a 2D projection plane. It can be defined as a 
+two-variable function f (x, y) where for each position (x, y) in the projection plane, f (x, y) defines the light intensity 
+at this point. An image is defined as a two-dimensional function, f(x, y), x, y are spatial coordinates, and the amplitude of f at any 
+pair of coordinates (x, y) is called the intensity or gray level of the image at that point.
+When x, y and the amplitude values of f are all finite, discrete quantities, we call the image a digital image.
+ Image + processing by a digital computer = D.I.P. 
+A digital image is composed of a finite number of elements, each of which has a particular location and value. 
+A digital image can be considered as a discrete representation of data possessing both spatial (layout) and intensity 
+(colour) information. 
+Pixel [Picture Element]
+A digital image is a representation of a two-dimensional image using a finite number of points, usually referred to 
+as picture elements, pels, or pixels. It is smallest discernible details of picture. It is a smallest unit of picture. Pixels 
+can be represented by dots and squares. Each pixel holds some value and is a sample of original image. Every pixel 
+in an image has an address. Pixel is indexed as an (x; y) or column-row (c; r) location from the origin of the image, 
+it represents the smallest, constituent element in a digital image and contains a numerical value which is the basic 
+unit of information within the image at a given spatial resolution and quantization level. Commonly, pixels contain 
+the colour or intensity response of the image as a small point sample of coloured light from the scene. However, 
+not all images necessarily contain strictly visual information. An image is simply a 2-D signal digitized as a grid of 
+pixels, the values of which may relate to other properties other than colour or light intensity. The information 
+content of pixels can vary considerably depending on the type of image we are processing.
+Each pixel is represented by one or more numerical values: for monochrome (grayscale) images, a single value 
+representing the intensity of the pixel (usually in a [0, 255] range) is enough; for color images, three values (e.g., 
+representing the amount of red (R), green (G), and blue (B)) are usually required.
+Gray Level [Intensity level]
+It carries only intensity information. It represents intensity level from weak level (represented as absolute black 
+color) to strongest intensity level (represented as absolute white color). Gray-level (also referred to as monochrome) 
+images are also encoded as a 2D array of pixels, usually with 8 bits per pixel, where a pixel value of 0 corresponds 
+to “black,” a pixel value of 255 means “white,” and intermediate values indicate varying shades of gray. The total 
+number of gray levels is larger than the human visual system requirements, making this format a good compromise 
+between subjective visual quality and relatively compact representation and storage.It defines picture quality. It is defined as “smallest number of discernible detail in an image”. It depends upon the picture elements involved to represents an image. More the number of pixels more(higher) is the image quality.
+e.g. An image is captured by a camera having a resolution of 5MP [5 Mega Pixels], it means 5 × 106 = 5000000 pixels are used to represent that one captured image.Two types of resolutions are￾Spatial resolution: It is the smallest discernible details in an image.Gray level resolution: Refers to the smallest discernible change in grey level.Mathematical representation of an image (representing a digital image)In equation form, image can be represented as M x N numerical array asEach element of the matrix is called image element, picture element or pixel. Number of intensity level is typically an integer power of 2.
+L =2K
+L – intensity level.
+K- K
+th value.
+Number of bits required to store a digitized image of MxNxK
+(i) Spatial Resolution: 
+Intuitively, spatial resolution is a measure of the smallest discernible detail in an image. Quantitatively, spatial 
+resolution can be stated in several ways, with line pairs per unit distance, and dots (pixels) per unit distance being 
+common measures. Dots per unit distance is a measure of image resolution used in the printing and publishing 
+industry. In the U.S., this measure usually is expressed as dots per inch (dpi). To give you an idea of quality, 
+newspapers are printed with a resolution of 75 dpi, magazines at 133 dpi, glossy brochures at 175 dpi, and the 
+book page at which you are presently looking was printed at 2400 dpi.
+To be meaningful, measures of spatial resolution must be stated with respect to spatial units. Image size by itself 
+does not tell the complete story.
+Unit of spatial resolution is line pairs per unit distance & dots (pixels) per unit distance. Also measured in DPI (dots 
+per inch), is used to measure image resolution. Spatial resolution depends on the number of pixels. The principal 
+factor determining spatial resolution is sampling.
+Effects of reducing the spatial resolution of a digital image.
+ Naturally, the lower resolution images are smaller 
+than the original image in (a). For example, the original image is of size pixels, but the 72 dpi image is an array of 
+only pixels. In order to facilitate comparisons, all the smaller images were zoomed back to the original size (the 
+method used for zooming will be discussed later in this section). This is somewhat equivalent to “getting closer” to 
+the smaller images so that we can make comparable statements about visible details.The images shown are at: (a) 930 dpi, (b) 300 dpi, (c) 150 dpi, and (d) 72 dpi.There are some small visual differences between Figs. 2.23(a) and (b), the most notable being a slight distortion in 
+the seconds marker pointing to 60 on the right side of the chronometer. For the most part, however, Fig. 2.23(b) is 
+quite acceptable. In fact, 300 dpi is the typical minimum image spatial resolution used for book publishing, so one 
+would not expect to see much difference between these two images. Figure 2.23(c) begins to show visible 
+degradation (see, for example, the outer edges of the chronometer case and compare the seconds marker with the 
+previous two images). The numbers also show visible degradation. Figure 2.23(d) shows degradation that is visible 
+in most features of the image. when printing at such low resolutions, the printing and publishing industry uses a 
+number of techniques (such as locally varying the pixel size) to produce much better results than those in Fig. 
+2.23(d). Also, as we will show later in this section, it is possible to improve on the results of Fig. 2.23 by the choice 
+of interpolation method used.
+(ii) Intensity Resolution or Gray-level Resolution:
+Refers to the smallest discernible change in the gray level. It is never used to generate a digital image. 
+It depends upon hardware consideration & is an integer power of 2. Gray-level resolution depends on the number 
+of gray levels.
+Intensity resolution similarly refers to the smallest discernible change in intensity level. Based on hardware 
+considerations, the number of intensity levels usually is an integer power of two (L =2K
+). The most common number 
+is 8 bits, with 16 bits being used in some applications in which enhancement of specific intensity ranges is necessary. 
+Intensity quantization using 32 bits is rare. Sometimes one finds systems that can digitize the intensity levels of an 
+image using 10 or 12 bits, but these are not as common.
+Unlike spatial resolution, which must be based on a per-unit-of-distance basis to be meaningful, it is common 
+practice to refer to the number of bits used to quantize intensity as the “intensity resolution.” For example, it is 
+common to say that an image whose intensity is quantized into 256 levels has 8 bits of intensity resolution. However, 
+keep in mind that discernible changes in intensity are influenced also by noise and saturation values, and by the 
+capabilities of human perception to analyze and interpret details in the context of an entire scene. The following 
+two examples illustrate the effects of spatial and intensity resolution on discernible detail. Later in this section, we 
+will discuss how these two parameters interact in determining perceived image quality.
+Effects of varying the number of intensity levels in a digital image.
+Figure 2.24(a) is a 256-level grayscale image of a chemotherapy vial (bottom) and a drip bottle. The objective of 
+this example is to reduce the number of intensities of this image from 256 to 2 in integer powers of 2, while leaving 
+the image resolution at a fixed 783 dpi (the images are of size pixels). Figures 2.24(b) through (d) were obtained 
+by reducing the number of intensity levels to 128, 64, and 32, respectively (we will discuss how to reduce the 
+number of levels in Chapter 3). The 128- and 64-level images are visually identical for all practical purposes. 
+However, the 32-level image in Fig. 2.24(d) has a set of almost imperceptible, very fine ridge-like structures in 
+areas of constant intensity. These structures are clearly visible in the 16-level image in Fig. 2.24(e). This effect, 
+caused by using an insufficient number of intensity levels in smooth areas of a digital image, is called false 
+contouring, so named because the ridges resemble topographic contours in a map. False contouring generally is 
+quite objectionable in images displayed using 16 or fewer uniformly spaced intensity levels, 
+As a very rough guideline, and assuming integer powers of 2 for convenience, images of size pixels with 64 intensity 
+levels, and printed on a size format on the order of cm, are about the lowest spatial and intensity resolution images 
+that can be expected to be reasonably free of objectionable sampling distortions and false contouring.
+Basic Concept in Image Sampling and Quantization
+There are numerous ways to acquire images, but our objective in all is the same: to generate digital images from 
+sensed data. The output of most sensors is a continuous voltage waveform whose amplitude and spatial behavior 
+are related to the physical phenomenon being sensed. To create a digital image, we need to convert the continuous 
+sensed data into a digital format. This requires two processes: sampling and quantization.
+Basic Concepts in Sampling and Quantization
+Figure 2.16(a) shows a continuous image f that we want to convert to digital form. An image may be continuous 
+with respect to the x- and y-coordinates, and also in amplitude. To convert the continuous function f(x,y) to digital 
+form, we need to sample the function in both co-ordinates and in amplitude.
+Digitizing the co-ordinates value is called sampling. Digitizing the amplitude value is called quantization..
+The one-dimensional function in Fig. 2.16(b) is a plot of amplitude (intensity level) values of the continuous image 
+along the line segment AB in Fig. 2.16(a). The random variations are due to image noise. To sample this function, 
+we take equally spaced samples along line AB, as shown in Fig. 2.16(c). The samples are shown as small dark 
+squares superimposed on the function, and their (discrete) spatial locations are indicated by corresponding tick 
+marks in the bottom of the figure. The set of dark squares constitute the sampled function. However, the values of 
+the samples still span (vertically) a continuous range of intensity values. In order to form a digital function, the 
+intensity values also must be converted (quantized) into discrete quantities. The vertical gray bar in Fig. 2.16(c) 
+depicts the intensity scale divided into eight discrete intervals, ranging from black to white. The vertical tick marks 
+indicate the specific value assigned to each of the eight intensity intervals. The continuous intensity levels are 
+quantized by assigning one of the eight values to each sample, depending on the vertical proximity of a sample to 
+a vertical tick mark. The digital samples resulting from both sampling and quantization are shown as white squares 
+in Fig. 2.16(d). Starting at the top of the continuous image and carrying out this procedure downward, line by line, 
+produces a two-dimensional digital image. It is implied in Fig. 2.16 that, in addition to the number of discrete levels 
+used, the accuracy achieved in quantization is highly dependent on the noise content of the sampled signal.
+In practice, the method of sampling is determined by the sensor arrangement used to generate the image. 
+When an image is generated by a single sensing element combined with mechanical motion, as in Fig. 2.13, the 
+output of the sensor is quantized in the manner described above. However, spatial sampling is accomplished by 
+selecting the number of individual mechanical increments at which we activate the sensor to collect data. 
+Mechanical motion can be very exact so, in principle, there is almost no limit on how fine we can sample an image 
+using this approach. In practice, limits on sampling accuracy are determined by other factors, such as the quality of
+the optical components used in the system.
+When a sensing strip is used for image acquisition, the number of sensors in the strip establishes the samples in the 
+resulting image in one direction, and mechanical motion establishes the number of samples in the other. 
+Quantization of the sensor outputs completes the process of generating a digital image.
+Sampling Quantization
+Sampling establishes the number of pixels in a digital image. Quantization establishes the color of each pixel.
+Sampling digitalizes an analog signal's x-axis. Quantization digitalizes its y-axis.
+An analog signal's amplitude value is noted at predetermined 
+intervals during sampling.
+In quantization, the amplitude values are rounded off, 
+and the values are given.
+Sampling is carried out before quantization. Quantization is carried out following sampling.
+Basic relationships between pixels, 4, 8 and m-connectivity
+In order to analyse or identify different regions or entities in an image, it is necessary to know the relationship 
+between neighbouring pixels. The neighboring relationship between pixels is very important in an image processing 
+task. 
+Neighbours of a Pixel
+A pixel will have four neighbours if the neighbours exist in the EAST, WEST, NORTH and SOUTH direction. 
+The four neighbours of the pixel ‘P’ pixel are represented in Fig. 1.3. A pixel p(x,y) has four neighbors (two vertical 
+and two horizontal neighbors) specified by [(x+1, y), (x–1, y), (x, y+1), (x, y–1)]. This set of pixels is known as the 
+4-neighbors of P, and is denoted by N4(P). All these neighbors are at a unit distance from P.
+A pixel p(x,y) has four diagonal neighbors specified by, [(x+1, y+1), (x+1, y–1), (x–1, y+1), (x–1, y–1)]. 
+This set of pixels is denoted by ND(P). All these neighbors are at a distance of 1.414 in Euclidean space from 
+P. For a pixel on the boundary, some neighboring pixels of a pixel may not exist in the image. Below figure shows 
+diagonal neighbors of a pixel.
+A pixel ‘P’ will have eight neighbours if the neighbours are in eight directions such as EAST, WEST, NORTH, 
+SOUTH, NORTH-EAST (NE), NORTH-WEST (NW), SOUTH-EAST (SE) and SOUTH-WEST (SW). The eight 
+neighbours of the pixel ‘P’ are represented in Fig. 1.4. The points ND(P) and N4(P) are together known as 
+8-neighbors of the point P, denoted by N8(P). In 8-neighbors, all the neighbors of a pixel p(x,y) are: [(x+1, y), (x–
+1, y), (x, y+1), (x, y–1), (x+1, y+1), (x+1, y–1), (x–1, y+1), (x–1, y–1)]. 
+For a pixel on the boundary, some neighboring pixels of a pixel may not exist in the image.
+Adjacency
+Adjacency of two pixels is defined in the terms of neighbors of a pixel. Two pixels p and q are said to be 4-adjacent 
+if these pixels are 4-neighbors to each other, i.e., if these pixels have the same value in a binary image and q is 4-
+neighbor of p. 
+Similarly, two pixels p and q are 8-adjacent, if these pixels are 8-neighbors to each other, i.e., if these pixels have 
+the same value in a binary image and q is 8-neighbor of p. 
+This concept can also be extended to grayscale images. In grayscale images, the value of intensity at pixels may 
+not be same but they must belong to a defined set of intensities.
+Two pixels, p and q, are called m-adjacent (mixed adjacent) if these two pixels are either 4-adjacent or 
+diagonal adjacent but not both. m-adjacency is an improvement over 8-adjacency as sometimes 8-adjacency may 
+be ambiguous.
+Let V be the set of intensity values used to define adjacency. In a binary image, if we are referring to adjacency of 
+pixels with value 1. In a grayscale image, the idea is the same, but set V typically contains more elements. 
+For example, if we are dealing with the adjacency of pixels whose values are in the range 0 to 255, set V could be 
+any subset of these 256 values. We consider three types of adjacency:
+1. 4-adjacency. Two pixels p and q with values from V are 4-adjacent if q is in the set N4(p).
+2. 8-adjacency. Two pixels p and q with values from V are 8-adjacent if q is in the set N8(p).
+m-adjacency (also called mixed adjacency). Two pixels p and q with values from V are m-adjacent if
+a. q is in N4(p), or
+b. q is in ND(p) and the set N4(p) Ո N4(q) has no pixels whose values are from V.
+Mixed adjacency is a modification of 8-adjacency, and is introduced to eliminate the ambiguities that may 
+result from using 8-adjacency. For example, consider the pixel arrangement in Fig. 2.28(a) and let V={1}. The 
+three pixels at the top of Fig. 2.28(b) show multiple (ambiguous) 8-adjacency, as indicated by the dashed lines. 
+This ambiguity is removed by using m-adjacency, as in Fig. 2.28(c). In other words, the center and upper-right 
+diagonal pixels are not m-adjacent because they do not satisfy condition (b).
+Digital Path
+A (digital) path (or curve) from a pixel p (x0, y0) to pixel q(xn, yn) is a sequence of distinct pixels with coordinates 
+(x0, y0), (x1, y1), …, (xn, yn), where (xi, yi) and (xi–1, yi–1) are adjacent for 1 ≤ i ≤ n. If (x0, y0) = (xn, yn), the path is 
+known as a closed path and n is the length of the path. 4-, 8-, and m-paths can be defined based on the type of 
+adjacency used.
+m-path
+An m-path in digital image processing refers to a sequence of pixels (or voxels in 3D images) that forms a connected 
+path between two points in a digital image. The "m" in m-path stands for "minimum" or "metric," indicating the 
+use of a specific metric or measure to determine the path.
+Features of m-paths:
+1. Connected Path: The path consists of adjacent pixels, meaning each pixel in the path is a neighbor to the 
+next pixel in the sequence.
+2. Distance Metric: The path is often determined based on a distance metric, such as the Euclidean distance, 
+Manhattan distance, or other custom distance measures.
+3. Optimization: The m-path typically aims to minimize the total distance or cost associated with traveling 
+from the starting point to the ending point.
+4. Applications: m-paths are used in various applications, such as object recognition, image segmentation, 
+and shortest path finding in binary or grayscale images.
+Distance Measures
+The distance between any two pixels in a given image can be given by three different types of measures and they 
+are
+(1) Euclidian distance
+(2) D4 distance and
+(3) D8 distance
+The Euclidian distance between p and q is defined as
+De(p, q) = ((x1 - x2)
+2 + (y1 - y2)
+2
+)
+1/2
+where (x1, y1) and (x2, y2) are the coordinates of the pixels p and q, respectively.
+The D4 distance also called as city-blocking distance between p and q is defined as
+D4(p, q) = || (x1 - x2) + (y1 - y2) ||
+The D8 distance also called chessboard distance between p and q is defined as
+ D8(p, q) = max (| (x1 - x2) | , | (y1 - y2) |)
+Image File Formats
+an image file format is a standard way to organize and store image data. It defines how the data is arranged and the 
+type of compression (if any) that is used. There are a great many different formats for storing image data. 
+Some have been designed to fulfill a particular need (for example, to transmit image data over a network); others 
+have been designed around a particular operations system or environment. As well as the gray values or color values 
+of the pixels, an image file will contain some header information. This will, at the very least, include the size of the 
+image in pixels (height and width); it may also include the color map, compression used, and a description of the 
+image. Each system recognizes many standard formats, and can read image data from them and write image data 
+to them.
+TIFF (Tag Image File Format)
+TIFF is expanded as Tag Image File Format. It is normally referred to as a huge file format, meaning if an image is 
+stored as a TIFF, it is expected to be huge in size. As we know, when an image gets larger, it has a lot of data and 
+content in it. TIFF images are also classified as an uncompressed image format type. 
+A TIFF is preferred where flexibility is paramount in terms of colors. TIFF can support grayscale, CMY, RGB, and 
+more. TIFF is mostly preferred by graphic designers and photographers as it supports vast color options.
+TIFF is a lossless file format.
+To understand TIFF better, the following pros and cons should be considered:
+Pros
+• Support any range of image resolution, size, and colour depth and different compression techniques.
+• Very versatile, and can support multiple colors and options such as CMY and RGB.
+• Quality is not compromised and it ensures perfect and complete quality. 
+Cons
+• Its very large size is a concern.
+• Its larger file size limits its use in the Internet educational environment. Due to the same reason TIFF images are 
+rarely utilised in web applications.
+JPEG (Joint Photographic Experts Group)
+The JPEG is extremely popular for many reasons. It is a compressed storage technique. Much information can be 
+stored in the smaller sized file and hence it can save a lot of space. Your digital camera’s default image type is 
+likely JPEG as it gets better storage-related results.
+Whereas the TIFF is lossless, the JPEG is lossy. It loses some information when compressed. The biggest concern 
+with the JPEG image is the ability for the user to re-edit images. You will not get the best quality when the JPEG 
+image is edited, that is, the quality of the image is degraded. However, wherever the size of the image should be 
+small (as in webpages) and needs to load faster, JPEG is the obvious choice.
+The important features of JPEG file format are summarised below:
+(i) JPEG uses a lossy compression scheme.
+(ii) JPEG images are not interlaced; however, progressive JPEG images can be interlaced.
+Pros
+• Small size and reduced storage needs.
+• Default image type in digital cameras, which enables more photos to be stored.
+• Apt for the websites and digital documents, as the image loads faster.
+• Compatible with most operating systems and is widely accepted.
+In fact, this image type is indeed very popular.
+Cons
+• The discarded data is a huge concern. This could affect the content and quality.
+• May create room for false observations because of artifacts.
+• Transparency is hurt when this kind of image is used.
+PNG (Portable Network Graphic)
+The PNG (pronounced “ping”) format has been more recently designed to replace GIF, and to overcome some of 
+its disadvantages. Specifically, PNG was not to rely on any patented algorithms, and it was to support more image 
+types than GIF. 
+PNG supports grayscale, true-color, and indexed images. Moreover, its compression utility, zlib, always results in 
+genuine compression. This is not the case with LZW compression; it can happen that the result of an LZW 
+compression is larger than the original data. PNG also includes support for alpha channels, which are ways of 
+associating variable transparencies with an image, and gamma correction, which associates different numbers with 
+different computer display systems, to ensure that a given image will appear the same independently of the system.
+The colors supported tend to be the major challenge in the GIF and they are addressed with a PNG. The complete 
+range of colors is supported in a PNG. A PNG is classified as a lossless, compression-based image.
+The important features of PNG images are summarised below:
+(i) PNG images use a lossless compression scheme. 
+(ii) PNG images are interlaced.
+(iii) PNG images support 8-bit transparency.
+Pros
+• Improved color range support compared to GIF.
+• Increased transparency.
+• Smaller file size than GIF.
+Cons:
+• File size still not smaller than JPEG.
+Image File Sizes
+Image files tend to be large. We shall investigate the amount of information used in different image types of 
+varying sizes. For example, suppose we consider a 512 × 512 binary image. The number of bits used in this image 
+(assuming no compression, and neglecting, any header information) is
+(Here we use the convention that a kilobyte is 1000 bytes, and a megabyte is one million bytes.) A grayscale 
+image of the same size requires:
+If we now turn our attention to color images, each pixel is associated with 3 bytes of color information. A 512 × 
+512 image thus requires
+Many images are of course larger than this; satellite images may be of the order of several thousand pixels in each 
+direction.
+Digital Image Processing by A. Baskar et. al., 2023, CRC Press.
+• If the pixel dimensions are given, multiply them with each other and the bit depth to determine the number 
+of bits in an image file.
+• Step-1: Multiply M x N.
+• Step-2: Multiply total number of pixels by bit depth.
+• Step-3: Divide total number of bits by 8, equals the file size in byte.
+• Step-4: Divide the number of bytes by 1024 to get file size in Kilobytes. Divide by 1024 again and 
+get the file size in Megabytes.
+• To estimate the file size of an image-
+(pixel dimensions × bit depth)/8 = (total number of pixels × bit depth)/8 = Total number of bytes.

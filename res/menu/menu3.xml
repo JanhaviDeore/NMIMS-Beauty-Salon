@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/group1">
+        <item
+            android:id="@+id/home"
+            android:title="Home"
+            android:icon="@drawable/home"/>
+    </group>
+
+    <group
+        android:id="@+id/group2">
+        <item
+            android:id="@+id/logout"
+            android:title="Logout"
+            android:icon="@drawable/logout"/>
+    </group>
+
+
+    <group
+        android:id="@+id/group3">
+        <item
+            android:id="@+id/navToDoList"
+            android:title="Services Details"
+            android:icon="@drawable/todolist"/>
+
+        <item
+            android:id="@+id/payment"
+            android:title="Payment"
+            android:icon="@drawable/payment"/>
+    </group>
+
+    <group
+        android:id="@+id/group4">
+        <item
+            android:id="@+id/navFeedback"
+            android:title="Feedback"
+            android:icon="@drawable/feedback"/>
+
+        <item
+            android:id="@+id/navTerms"
+            android:title="Terms and Conditions"
+            android:icon="@drawable/termsandconditions"/>
+
+        <item
+            android:id="@+id/navContact"
+            android:title="Contact Us"
+            android:icon="@drawable/contactus"/>
+    </group>
+
+    <group
+        android:id="@+id/group5">
+        <item
+            android:id="@+id/navShare"
+            android:title="Share"
+            android:icon="@drawable/share"/>
+    </group>
+
+</menu>

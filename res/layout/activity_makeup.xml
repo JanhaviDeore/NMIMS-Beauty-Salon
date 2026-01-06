@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".makeup">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_awesome_toolbar_makeup"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@color/black"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/toolbar_title1"
+                android:layout_width="261dp"
+                android:layout_height="95dp"
+                android:fontFamily="sans-serif-black"
+                android:gravity="start"
+                android:text="Makeup..."
+                android:textColor="@color/white"
+                android:textSize="25pt"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.38"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.644" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/wi1"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:contentDescription="Basic Makeup Icon"
+                android:src="@drawable/makeupbasic" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:paddingLeft="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/t1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Basic Makeup"
+                    android:textColor="#D32F2F"
+                    android:textSize="10pt" />
+
+                <TextView
+                    android:id="@+id/price1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs.1000"
+                    android:textColor="@color/black"
+                    android:textSize="10pt" />
+
+                <Button
+                    android:id="@+id/toDo1"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:text="To Do" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/hi2"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:contentDescription="HD Makeup Icon"
+                android:src="@drawable/makeuphd" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:paddingLeft="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/t2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="HD Makeup"
+                    android:textColor="#D32F2F"
+                    android:textSize="10pt" />
+
+                <TextView
+                    android:id="@+id/price2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs.2000"
+                    android:textColor="@color/black"
+                    android:textSize="10pt" />
+
+                <Button
+                    android:id="@+id/toDo2"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:text="To Do" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/hi3"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:contentDescription="Matt makeup Icon"
+                android:src="@drawable/makeupmatt" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/t3"
+                    android:layout_width="198dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Matt Makeup"
+                    android:textColor="#D32F2F"
+                    android:textSize="9pt" />
+
+                <TextView
+                    android:id="@+id/price3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs.3000"
+                    android:textColor="@color/black"
+                    android:textSize="10pt" />
+
+                <Button
+                    android:id="@+id/toDo3"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:text="To Do" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Project</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="welcome_message">Welcome, %1$s!</string>
+    <string name="task_info">%1$s - $%2$.2f</string>
+    <string name="no_tasks_found">No tasks found</string>
+</resources>
